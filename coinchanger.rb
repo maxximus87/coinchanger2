@@ -22,7 +22,12 @@ def coin_changer(cents_received)
 		cents_received.between?(25, 29)
 		coins[:quarter] = 1
 		coins[:penny] = cents_received - 25
-
+	elsif 
+		cents_received.between?(35, 39)
+		coins[:quarter] = 1
+		coins[:dime] = 1
+		coins[:penny] = cents_received - 35
+		
 		end
 	coins
 end
