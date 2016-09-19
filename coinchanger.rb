@@ -27,7 +27,6 @@ def coin_changer(cents_received)
 		coins[:quarter] = 1
 		coins[:dime] = 1
 		coins[:penny] = cents_received - 35
-		
 		end
 	coins
 end
