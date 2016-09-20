@@ -44,6 +44,15 @@ def coin_changer(cents_received)
 		cents_received = 70
 		coins[:quarter] = 2
 		coins[:dime] = 2
-		end
+	elsif 
+		cents_received.between?(71, 74)
+		coins[:quarter] = 2
+		coins[:dime] = 2
+		coins[:penny] = cents_received - 70
+	elsif 
+		cents_received.between?(75, 79)
+		coins[:quarter] = 3
+		coins[:penny] = cents_received - 75
+	end
 	coins
 end
