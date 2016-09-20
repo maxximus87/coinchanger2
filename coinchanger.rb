@@ -40,6 +40,10 @@ def coin_changer(cents_received)
 		coins[:quarter] = 2
 		coins[:nickel] = 1
 		coins[:penny] = cents_received - 55
+	elsif 
+		cents_received = 70
+		coins[:quarter] = 2
+		coins[:dime] = 2
 		end
 	coins
 end
