@@ -35,6 +35,11 @@ def coin_changer(cents_received)
 	elsif 
 		cents_received == 50
 		coins[:quarter] = 2
+	elsif 
+		cents_received.between?(51, 59)
+		coins[:quarter] = 2
+		coins[:nickel] = 1
+		coins[:penny] = cents_received - 55
 		end
 	coins
 end
