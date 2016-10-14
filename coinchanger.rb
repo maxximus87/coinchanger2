@@ -1,58 +1,28 @@
-def coin_changer(cents_received)
-	coins = {}
-	if cents_received == 0
-		coins = {}
-	elsif 
-		cents_received.between?(0, 4)
-		coins[:penny] = cents_received
-	elsif 
-		cents_received == 5
-		coins[:nickel] = 1
-	elsif 
-		cents_received.between?(6, 9)
-		coins[:nickel] = 1
-		coins[:penny] = cents_received - 5
-	elsif 
-		cents_received == 10
-		coins[:dime] = 1
-	elsif 
-		cents_received == 25
-		coins[:quarter] = 1
-	elsif 
-		cents_received.between?(25, 29)
-		coins[:quarter] = 1
-		coins[:penny] = cents_received - 25
-	elsif 
-		cents_received.between?(35, 39)
-		coins[:quarter] = 1
-		coins[:dime] = 1
-		coins[:penny] = cents_received - 35
-	elsif 
-		cents_received == 40
-		coins[:quarter] = 1
-		coins[:dime] = 1
-		coins[:nickel] = 1
-	elsif 
-		cents_received == 50
-		coins[:quarter] = 2
-	elsif 
-		cents_received.between?(51, 59)
-		coins[:quarter] = 2
-		coins[:nickel] = 1
-		coins[:penny] = cents_received - 55
-	elsif 
-		cents_received = 70
-		coins[:quarter] = 2
-		coins[:dime] = 2
-	elsif 
-		cents_received.between?(71, 74)
-		coins[:quarter] = 2
-		coins[:dime] = 2
-		coins[:penny] = cents_received - 70
-	elsif 
-		cents_received.between?(75, 79)
-		coins[:quarter] = 3
-		coins[:penny] = cents_received - 75
+def change(cents_received)
+	coins = {penny: 0, nickel: 0, dime: 0, quarter: 0, half_dollar: 0, silver_dollar: 0}
+	coin_value = {silver_dollar: 100, half_dollar: 50, quarter: 25, dime: 10, nickel: 5, penny: 1}
+	
+
+	coin_value.each do | coin, value|
+      while
+      	value <= cents_received
+      	coins[coin] += 1
+      	cents_received = cents_received - value
+      end
+    end
+ coins
+end
+
+
+
+
+def hashconverter(coins)
+	change = ""
+	coins.each do |key, value|
+		if value > 0
+		change << " " + value.to_s + " " + key.to_s+ "s"
+	    end
+		
 	end
-	coins
+	change
 end
